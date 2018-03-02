@@ -18,13 +18,13 @@ app.use(bodyParser.json());
 // ROUTER
 // The below points our server to a series of "route" files.
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
-// ================================================================================
+// // ================================================================================
 
-  // require('./app/routing/apiRoutes')
-  // require('./app/routing/htmlRoutes')
+  require('./app/routing/apiRoutes')(app);
+  require('./app/routing/htmlRoutes')(app);
   // var apiRoutes = require('./app/routing/apiRoutes');
-   var htmlRoutes = require('./app/routing/htmlRoutes');
-   app.use(htmlRoutes, '/htmlRoutes');
+   // var htmlRoutes = require('./app/routing/htmlRoutes');
+   // app.use(htmlRoutes, '/htmlRoutes');
 
  //Listener
 

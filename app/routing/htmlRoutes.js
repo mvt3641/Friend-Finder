@@ -3,9 +3,9 @@
 
 
 
-exports.htmlRoutes = function(){
+module.exports = function(app){
 
-  app.get('/home', function(req,res){
+  app.get('/', function(req,res){
     res.send("testing");
     res.sendFile(path.join(__dirname, "..app/public/home.html"));
   })
