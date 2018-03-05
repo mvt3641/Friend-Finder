@@ -25,9 +25,9 @@ module.exports = function(app) {
       //console.log(req.body);
 
       for (var j = 0; j < userResponses.length; j++) {
-        var diff = 0;
-        diff += Math.abs(friends[i].scores[j] - userResponses[j]);
-        console.log('diff = ' + diff);
+
+        var diff = Math.abs(friends[i].scores[j] - userResponses[j]);
+         //console.log('diff = ' + diff);
 
       }
 
@@ -36,24 +36,30 @@ module.exports = function(app) {
         totalDifference = diff;
         matchName = friends[i].name;
         matchImg = friends[i].photo;
-        console.log(matchName);
-        console.log(matchImg);
+        // console.log(matchName);
+        // console.log(matchImg);
       }
     }
-
-
+    console.log(matchName);
+    console.log(matchImg);
 
 
     // Add new user
 
     friends.push(userData);
-    res.json(friends)
+    //res.json(friends)
 
-    // // Send appropriate response
-    // res.json({
-    //   status: 'OK',
-    //   matchName: matchName,
-    //   matchImg: matchImg
-    // });
+     // Send response
+    res.json({
+      // status: 'OK',
+      matchName: matchName,
+      matchImg: matchImg
+    });
   })
+
+  // app.post('/api/survey', function(req,res){
+  //   res.json(match);
+  //
+  // })
+
 }

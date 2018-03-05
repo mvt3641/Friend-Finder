@@ -255,22 +255,23 @@
           };
           // console.log(userData);
           // AJAX post the data to the friends API.
-          $.post("/api/friends", userData,)
+          $.post("/api/friends", userData)
 
           .done(function(data) {
 
             // Grab the result from the AJAX post so that the best match's name and photo are displayed.
             $("#match-name").text(data.matchName);
             $("#match-img").attr("src", data.matchImg);
-            console.log(JSON.stringify(data.matchName));
-            console.log(data.matchImg);
+
+
+            //console.log(data.matchImg);
 
             // Show the modal with the best match
             $("#results-modal").modal("toggle");
-            // console.log(data);
-
+            console.log(data);
+         //console.log(matchName);
           });
-         //console.log(data);
+         //console.log(matchName);
        } else {
           alert("Please fill out all fields before submitting!");
         }
