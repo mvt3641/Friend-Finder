@@ -21,13 +21,13 @@ module.exports = function(app) {
     var totalDifference = 10000;
     for (var i = 0; i < friends.length; i++) {
 
-      console.log(friends[i].scores);
+    //  console.log(friends[i].scores);
       //console.log(req.body);
 
       for (var j = 0; j < userResponses.length; j++) {
 
         var diff = Math.abs(friends[i].scores[j] - userResponses[j]);
-         //console.log('diff = ' + diff);
+         console.log('diff = ' + diff);
 
       }
 
