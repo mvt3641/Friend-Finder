@@ -5,7 +5,7 @@ module.exports = function(app) {
 
   app.get('/api/friends', function(req, res) {
 
-    res.json(friends)
+    res.json(friends);
   })
 
 
@@ -50,10 +50,9 @@ module.exports = function(app) {
     //res.json(friends)
 
      // Send response
-    res.json({
-      // status: 'OK',
-      matchName: matchName,
-      matchImg: matchImg
+    res.send({
+        matchName:matchName,
+        matchImg:matchImg
     });
   })
 
